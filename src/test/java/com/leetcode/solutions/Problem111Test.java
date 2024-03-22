@@ -1,11 +1,14 @@
 package com.leetcode.solutions;
 
-import com.leetcode.solutions.CustomStructures.*;
-import org.junit.jupiter.api.*;
-import org.junit.jupiter.params.*;
-import org.junit.jupiter.params.provider.*;
 
-import java.util.stream.*;
+
+import com.leetcode.solutions.CustomStructures.TreeNode;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.stream.Stream;
 
 import static org.assertj.core.api.BDDAssertions.then;
 
@@ -45,18 +48,10 @@ public class Problem111Test {
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    void Problem11TestCases(TreeNode input, Integer expected) {
+    void Problem111TestCases(TreeNode input, Integer expected) {
         // given
-        var treeNode = new TreeNode(
-                3,
-                new TreeNode(9),
-                new TreeNode(
-                        20,
-                        new TreeNode(15),
-                        new TreeNode(7)));
-
         // when
-        var actual = serviceUnderTest.minDepth(treeNode);
+        var actual = serviceUnderTest.minDepth(input);
 
         // then
         then(actual).isEqualTo(expected);
