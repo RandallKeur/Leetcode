@@ -4,9 +4,6 @@ import com.leetcode.solutions.CustomStructures.TreeNode;
 
 public class Problem111 {
 
-    private int depth = 1;
-    private int minDepth = 1;
-
     public int minDepth(TreeNode root) {
 
         // Empty root
@@ -23,12 +20,15 @@ public class Problem111 {
             return 1;
         }
 
+        // If the left tree is empty, return depth of the right.
         if (root.left == null)
             return rightDepth + 1;
 
+        // If the right tree is empty, return depth of the left.
         if (root.right == null)
             return leftDepth + 1;
 
+        // Return the minimum of the depths, adding 1 to account for the current node
         return Math.min(leftDepth, rightDepth) + 1;
     }
 }
