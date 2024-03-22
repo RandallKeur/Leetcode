@@ -22,13 +22,6 @@ jobs:
         run: mvn clean install -DskipTests
       - name: Test
         run: mvn test
-
-  package:
-    runs-on: ubuntu-latest
-    needs: [ build_and_test ]
-
-    steps:
-      - uses: actions/checkout@v4
       - name: Package
         run: mvn -B package --file pom.xml -DskipTests
 
