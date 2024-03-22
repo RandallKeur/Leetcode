@@ -32,9 +32,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
         with:
-          java-version: '19'
-          distribution: 'temurin'
-          cache: maven
+          java-version: 19
       - uses: actions/upload-artifact@v4
       - name: Package
         run: mvn -B package --file pom.xml -DskipTests
