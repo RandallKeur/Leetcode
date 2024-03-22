@@ -14,25 +14,21 @@ public class Problem111 {
             return 0;
 
         // Explore the left node
-        if (root.left != null){
-            depth++;
-            minDepth(root.left);
-        }
+        var leftDepth = minDepth(root.left);
         // Explore the right node
-        if (root.right != null){
-            depth++;
-            minDepth(root.right);
-        }
+        var rightDepth = minDepth(root.right);
 
         // Detect if the node is a leaf
         if (root.right == null && root.left == null) {
-            if (depth < minDepth){
-                minDepth = depth;
-                depth--;
-            }
-            return minDepth;
+            return 1;
         }
 
-        return minDepth;
+        if (root.left == null)
+            return rightDepth + 1;
+
+        if (root.right == null)
+            return leftDepth + 1;
+
+        return Math.min(leftDepth, rightDepth) + 1;
     }
 }
