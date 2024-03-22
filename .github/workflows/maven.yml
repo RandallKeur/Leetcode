@@ -33,10 +33,10 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           java-version: 19
-      - uses: actions/upload-artifact@v4
       - name: Package
         run: mvn -B package --file pom.xml -DskipTests
       - run: mkdir staging && cp target/*jar-with-dependencies.jar staging
+      - uses: actions/upload-artifact@v4
         with:
           name: Package
           path: staging
