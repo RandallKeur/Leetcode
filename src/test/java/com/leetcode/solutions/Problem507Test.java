@@ -13,7 +13,7 @@ public class Problem507Test {
 
     private Problem507 serviceUnderTest;
 
-    public static Stream<Arguments> TestCases() {
+    private static Stream<Arguments> TestCases() {
         return Stream.of(
                 Arguments.of(28, true),
                 Arguments.of(7, false),
@@ -27,11 +27,11 @@ public class Problem507Test {
     }
 
     @BeforeEach
-    void Setup() { this.serviceUnderTest = new Problem507(); }
+    public void Setup() { this.serviceUnderTest = new Problem507(); }
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    void Problem507Tests(Integer input, boolean expected) {
+    public void Problem507Tests(Integer input, boolean expected) {
         // given & when
         final var actual = serviceUnderTest.checkPerfectNumber(input);
 

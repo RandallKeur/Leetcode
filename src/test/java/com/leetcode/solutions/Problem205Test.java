@@ -13,7 +13,7 @@ public class Problem205Test {
 
     private Problem205 serviceUnderTest;
 
-    public static Stream<Arguments> TestCases() {
+    private static Stream<Arguments> TestCases() {
         return Stream.of(
                 Arguments.of("egg", "add", true),
                 Arguments.of("foo","bar", false),
@@ -28,11 +28,11 @@ public class Problem205Test {
 
 
     @BeforeEach
-    void Setup() { this.serviceUnderTest = new Problem205(); }
+    public void Setup() { this.serviceUnderTest = new Problem205(); }
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    void Problem205TestCases(String input1, String input2, boolean expected) {
+    public void Problem205Tests(String input1, String input2, boolean expected) {
         // given and when
         final var actual = serviceUnderTest.isIsomorphic(input1, input2);
 

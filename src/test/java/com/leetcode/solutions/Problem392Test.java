@@ -12,7 +12,7 @@ import static org.assertj.core.api.BDDAssertions.then;
 class Problem392Test {
 
     private Problem392 serviceUnderTest;
-    public static Stream<Arguments> TestCases() {
+    private static Stream<Arguments> TestCases() {
         return Stream.of(
                 Arguments.of("abc", "ahbgdc", true),
                 Arguments.of("axc", "ahbgdc", false),
@@ -25,11 +25,11 @@ class Problem392Test {
     }
 
     @BeforeEach
-    void Setup() { this.serviceUnderTest = new Problem392(); }
+    public void Setup() { this.serviceUnderTest = new Problem392(); }
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    void Problem392TestsVersion1(String string1, String string2, Boolean expected) {
+    public void Problem392TestsVersion1(String string1, String string2, Boolean expected) {
         // given and when
         final var actual = serviceUnderTest.isSubsequence(string1, string2);
 
@@ -39,7 +39,7 @@ class Problem392Test {
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    void Problem392TestsVersion2(String string1, String string2, Boolean expected) {
+    public void Problem392TestsVersion2(String string1, String string2, Boolean expected) {
         // given and when
         final var actual = serviceUnderTest.isSubsequenceVersion2(string1, string2);
 

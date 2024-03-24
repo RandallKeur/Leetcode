@@ -14,7 +14,7 @@ public class Problem229Test {
 
     private Problem229 serviceUnderTest;
 
-    public static Stream<Arguments> TestCases() {
+    private static Stream<Arguments> TestCases() {
         return Stream.of(
                 Arguments.of(new Integer[]{3, 2, 3}, List.of(3)),
                 Arguments.of(new Integer[] {1,2}, List.of(1,2)),
@@ -28,11 +28,11 @@ public class Problem229Test {
     }
 
     @BeforeEach
-    void Setup() { this.serviceUnderTest = new Problem229(); }
+    public void Setup() { this.serviceUnderTest = new Problem229(); }
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    void Problem229Tests(Integer[] input, List<Integer> expected) {
+    public void Problem229Tests(Integer[] input, List<Integer> expected) {
         // given & when
         final var actual = serviceUnderTest.majorityElement(input);
 

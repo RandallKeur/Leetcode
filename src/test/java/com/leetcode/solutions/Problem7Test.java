@@ -24,11 +24,11 @@ public class Problem7Test {
     }
 
     @BeforeEach
-    void setup() { this.serviceUnderTest = new Problem7(); }
+    public void setup() { this.serviceUnderTest = new Problem7(); }
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    void Problem7Tests(int input, int expected)
+    public void Problem7Tests(int input, int expected)
     {
         // given & when
         final var actual = serviceUnderTest.reverse(input);

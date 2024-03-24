@@ -13,7 +13,7 @@ public class Problem136Test {
 
     private Problem136 serviceUnderTest;
 
-    public static Stream<Arguments> TestCases() {
+    private static Stream<Arguments> TestCases() {
         return Stream.of(
                 Arguments.of(new Integer[] {2,2,1}, 1),
                 Arguments.of(new Integer[] {4,1,2,1,2}, 4),
@@ -24,11 +24,11 @@ public class Problem136Test {
     }
 
     @BeforeEach
-    void Setup() { this.serviceUnderTest = new Problem136(); }
+    public void Setup() { this.serviceUnderTest = new Problem136(); }
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    void Problem136Tests(Integer[] input, Integer expected){
+    public void Problem136Tests(Integer[] input, Integer expected){
         // given and when
         final var actual = serviceUnderTest.singleNumber(input);
 
