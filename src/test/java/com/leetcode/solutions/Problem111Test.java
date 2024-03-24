@@ -16,7 +16,7 @@ public class Problem111Test {
 
     private Problem111 serviceUnderTest;
 
-    public static Stream<Arguments> TestCases() {
+    private static Stream<Arguments> TestCases() {
         return Stream.of(
                 Arguments.of(
                         new TreeNode(
@@ -44,11 +44,11 @@ public class Problem111Test {
     }
 
     @BeforeEach
-    void Setup() { this.serviceUnderTest = new Problem111(); }
+    public void Setup() { this.serviceUnderTest = new Problem111(); }
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    void Problem111TestCases(TreeNode input, Integer expected) {
+    public void Problem111Tests(TreeNode input, Integer expected) {
         // given
         // when
         var actual = serviceUnderTest.minDepth(input);

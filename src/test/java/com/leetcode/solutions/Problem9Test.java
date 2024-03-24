@@ -13,7 +13,7 @@ public class Problem9Test {
 
     private Problem9 serviceUnderTest;
 
-    public static Stream<Arguments> TestCases() {
+    private static Stream<Arguments> TestCases() {
         return Stream.of(
                 Arguments.of(121, Boolean.TRUE),
                 Arguments.of(-121, Boolean.FALSE),
@@ -26,11 +26,11 @@ public class Problem9Test {
     }
 
     @BeforeEach
-    void Setup() { this.serviceUnderTest = new Problem9(); };
+    public void Setup() { this.serviceUnderTest = new Problem9(); };
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    void Problem9Tests(Integer input, Boolean expected) {
+    public void Problem9Tests(Integer input, Boolean expected) {
         // given & when
         final var actual = serviceUnderTest.isPalindrome(input);
 

@@ -13,7 +13,7 @@ import static org.assertj.core.api.BDDAssertions.then;
 public class Problem2Test {
     private Problem2 serviceUnderTest;
 
-    public static Stream<Arguments> TestCases() {
+    private static Stream<Arguments> TestCases() {
         return Stream.of(
                 Arguments.of(new ListNode(2, new ListNode(4, new ListNode(3, null))),
                         new ListNode(5, new ListNode(6, new ListNode(4, null))),
@@ -30,11 +30,11 @@ public class Problem2Test {
     }
 
     @BeforeEach
-    void Setup() { this.serviceUnderTest = new Problem2(); }
+    public void Setup() { this.serviceUnderTest = new Problem2(); }
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    void Problem13TestCases(ListNode listNode1, ListNode listNode2, ListNode expected){
+    public void Problem2Tests(ListNode listNode1, ListNode listNode2, ListNode expected){
         // given & when
         final var actual = serviceUnderTest.addTwoNumbers(listNode1, listNode2);
 

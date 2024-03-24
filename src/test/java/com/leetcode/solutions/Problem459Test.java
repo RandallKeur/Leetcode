@@ -12,7 +12,7 @@ public class Problem459Test {
 
     private Problem459 serviceUnderTest;
 
-    public static Stream<Arguments> TestCases() {
+    private static Stream<Arguments> TestCases() {
         return Stream.of(
                 Arguments.of("abab", true),
                 Arguments.of("aba", false),
@@ -23,11 +23,11 @@ public class Problem459Test {
     }
 
     @BeforeEach
-    void Setup() { this.serviceUnderTest = new Problem459(); }
+    public void Setup() { this.serviceUnderTest = new Problem459(); }
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    void TestCases(String input, boolean expected){
+    public void Problem459Tests(String input, boolean expected){
         // given & when
         final var actual = serviceUnderTest.repeatedSubstringPattern(input);
 

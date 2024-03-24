@@ -13,7 +13,7 @@ public class Problem1047Test {
 
     private Problem1047 serviceUnderTest;
 
-    public static Stream<Arguments> removeDuplicatesTestCases() {
+    private static Stream<Arguments> TestCases() {
         return Stream.of(
                 Arguments.of("abbaca", "ca"),
                 Arguments.of("azxxzy", "ay"),
@@ -26,13 +26,13 @@ public class Problem1047Test {
     }
 
     @BeforeEach
-    void Setup(){
+    public void Setup(){
         this.serviceUnderTest = new Problem1047();
     }
 
     @ParameterizedTest
-    @MethodSource("removeDuplicatesTestCases")
-    void RemoveDuplicates_TestCases(String input, String expected) {
+    @MethodSource("TestCases")
+    public void Problem1047Tests(String input, String expected) {
 
         //when
         final var actual = serviceUnderTest.removeDuplicates(input);

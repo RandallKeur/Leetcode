@@ -12,7 +12,7 @@ import static org.assertj.core.api.BDDAssertions.then;
 class Problem13Test {
 
     private Problem13 serviceUnderTest;
-    public static Stream<Arguments> TestCases() {
+    private static Stream<Arguments> TestCases() {
         return Stream.of(
                 Arguments.of("III", 3),
                 Arguments.of("LVIII", 58),
@@ -23,11 +23,11 @@ class Problem13Test {
     }
 
     @BeforeEach
-    void Setup() { this.serviceUnderTest = new Problem13(); }
+    public void Setup() { this.serviceUnderTest = new Problem13(); }
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    void Problem13Tests(String input, Integer expected) {
+    public void Problem13Tests(String input, Integer expected) {
         // given & when
         final var actual = serviceUnderTest.romanToInt(input);
 

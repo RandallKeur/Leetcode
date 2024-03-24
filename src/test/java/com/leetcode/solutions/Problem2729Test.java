@@ -13,7 +13,7 @@ class Problem2729Test {
 
     private Problem2729 serviceUnderTest;
 
-    public static Stream<Arguments> provideIsFascinatingTestCases() {
+    private static Stream<Arguments> TestCases() {
         return Stream.of(
                 Arguments.of(123, false),
                 Arguments.of(190, false),
@@ -23,13 +23,13 @@ class Problem2729Test {
     }
 
     @BeforeEach
-    void Setup(){
+    public void Setup(){
         this.serviceUnderTest = new Problem2729();
     }
 
     @ParameterizedTest
-    @MethodSource("provideIsFascinatingTestCases")
-    void IsFascinating_TestCases(Integer input, boolean expected) {
+    @MethodSource("TestCases")
+    public void Problem2729Tests(Integer input, boolean expected) {
 
         //when
         final var actual = serviceUnderTest.isFascinating(input);
