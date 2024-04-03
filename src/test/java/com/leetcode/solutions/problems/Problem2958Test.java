@@ -1,4 +1,4 @@
-package com.leetcode.solutions;
+package com.leetcode.solutions.problems;
 
 import com.leetcode.solutions.problems.Problem2958;
 import org.junit.jupiter.api.BeforeEach;
