@@ -1,4 +1,4 @@
-package com.leetcode.solutions;
+package com.leetcode.solutions.problems;
 
 public class Problem392 {
     public Boolean isSubsequence(String subsequence, String stringToCheck) {

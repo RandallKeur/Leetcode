@@ -1,6 +1,6 @@
-package com.leetcode.solutions;
+package com.leetcode.solutions.problems;
 
-import com.leetcode.solutions.CustomStructures.TreeNode;
+import com.leetcode.solutions.customStructures.TreeNode;
 
 public class Problem111 {
 

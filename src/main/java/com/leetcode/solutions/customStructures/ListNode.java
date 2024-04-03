@@ -1,4 +1,4 @@
-package com.leetcode.solutions.CustomStructures;
+package com.leetcode.solutions.customStructures;
 
 public class ListNode {
     public int val;

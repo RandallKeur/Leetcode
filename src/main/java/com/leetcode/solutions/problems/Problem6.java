@@ -1,4 +1,4 @@
-package com.leetcode.solutions;
+package com.leetcode.solutions.problems;
 
 public class Problem6 {
     public String convert(String input, int numberOfRows) {

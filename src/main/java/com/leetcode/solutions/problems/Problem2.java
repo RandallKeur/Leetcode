@@ -1,6 +1,6 @@
-package com.leetcode.solutions;
+package com.leetcode.solutions.problems;
 
-import com.leetcode.solutions.CustomStructures.ListNode;
+import com.leetcode.solutions.customStructures.ListNode;
 
 public class Problem2 {
     private Integer remainder = null;

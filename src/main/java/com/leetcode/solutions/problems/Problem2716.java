@@ -1,4 +1,4 @@
-package com.leetcode.solutions;
+package com.leetcode.solutions.problems;
 
 import java.util.ArrayList;
 import java.util.HashSet;

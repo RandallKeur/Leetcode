@@ -1,4 +1,4 @@
-package com.leetcode.solutions;
+package com.leetcode.solutions.problems;
 
 import java.util.Stack;
 import java.util.stream.Collectors;
