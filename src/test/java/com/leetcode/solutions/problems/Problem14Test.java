@@ -16,8 +16,9 @@ public class Problem14Test {
 
     private static Stream<Arguments> TestCases() {
         return Stream.of(
-                Arguments.of(List.of("flower","flow","flight"), "fl"),
-                Arguments.of(List.of("dog","racecar","car"), "")
+                Arguments.of(new String[] {"flower","flow","flight"}, "fl"),
+                Arguments.of(new String[] {"dog","racecar","car"}, ""),
+                Arguments.of(new String[] {"test","tes","testing", "tested"}, "tes")
         );
     }
 
