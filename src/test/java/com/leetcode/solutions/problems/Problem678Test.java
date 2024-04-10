@@ -27,7 +27,7 @@ public class Problem678Test {
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void Problem678Test(String input, Boolean expected) {
+    public void testSolution_withParameterizedInputs(String input, Boolean expected) {
         // given && when
         final var actual = serviceUnderTest.checkValidString(input);
 

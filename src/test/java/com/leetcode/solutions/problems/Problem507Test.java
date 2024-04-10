@@ -28,11 +28,11 @@ public class Problem507Test {
     }
 
     @BeforeEach
-    public void Setup() { this.serviceUnderTest = new Problem507(); }
+    public void setup() { this.serviceUnderTest = new Problem507(); }
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void Problem507Tests(Integer input, boolean expected) {
+    public void testSolution_withParameterizedInputs(Integer input, boolean expected) {
         // given & when
         final var actual = serviceUnderTest.checkPerfectNumber(input);
 

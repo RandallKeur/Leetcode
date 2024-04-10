@@ -29,11 +29,11 @@ public class Problem205Test {
 
 
     @BeforeEach
-    public void Setup() { this.serviceUnderTest = new Problem205(); }
+    public void setup() { this.serviceUnderTest = new Problem205(); }
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void Problem205Tests(String input1, String input2, boolean expected) {
+    public void testSolution_withParameterizedInputs(String input1, String input2, boolean expected) {
         // given and when
         final var actual = serviceUnderTest.isIsomorphic(input1, input2);
 

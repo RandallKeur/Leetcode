@@ -29,7 +29,7 @@ public class Problem6Test {
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void Problem6Tests(String input, int numberOfRows, String expected) {
+    public void testSolution_withParameterizedInputs(String input, int numberOfRows, String expected) {
         // given & when
         final var actual = serviceUnderTest.convert(input, numberOfRows);
 

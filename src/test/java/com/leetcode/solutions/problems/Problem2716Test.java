@@ -15,7 +15,7 @@ public class Problem2716Test {
 
     private Problem2716 serviceUnderTest;
 
-    private static Stream<Arguments> minStringLengthTestCases() {
+    private static Stream<Arguments> TestCases() {
         return Stream.of(
                 Arguments.of("aaabc", 3),
                 Arguments.of("cbbd", 3),
@@ -23,7 +23,7 @@ public class Problem2716Test {
         );
     }
 
-    private static Stream<Arguments> minimizedStringLengthWithoutAdjacentRepeatingCharactersTestCases() {
+    private static Stream<Arguments> WithoutAdjacentTestCases() {
         return Stream.of(
                 Arguments.of("aaaabcd", 4),
                 Arguments.of("aaabacd", 5),
@@ -35,11 +35,11 @@ public class Problem2716Test {
 
 
     @BeforeEach
-    public void Setup() {this.serviceUnderTest = new Problem2716();}
+    public void setup() {this.serviceUnderTest = new Problem2716();}
 
     @ParameterizedTest
-    @MethodSource("minStringLengthTestCases")
-    public void minStringLength_Tests(String input, int expected) {
+    @MethodSource("TestCases")
+    public void testSolution_withParameterizedInputs(String input, int expected) {
         //when
         final var actual = serviceUnderTest.minimizedStringLength(input);
 
@@ -48,8 +48,8 @@ public class Problem2716Test {
     }
 
     @ParameterizedTest
-    @MethodSource("minimizedStringLengthWithoutAdjacentRepeatingCharactersTestCases")
-    public void minimizedStringLengthWithoutAdjacentRepeatingCharacters_Tests(String input, int expected) {
+    @MethodSource("WithoutAdjacentTestCases")
+    public void testWithoutAdjacentSolution_withParameterizedInputs(String input, int expected) {
         //when
         final var actual = serviceUnderTest.minimizedStringLengthWithoutAdjacentRepeatingCharacters(input);
 

@@ -24,11 +24,11 @@ class Problem13Test {
     }
 
     @BeforeEach
-    public void Setup() { this.serviceUnderTest = new Problem13(); }
+    public void setup() { this.serviceUnderTest = new Problem13(); }
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void Problem13Tests(String input, Integer expected) {
+    public void testSolution_withParameterizedInputs(String input, Integer expected) {
         // given & when
         final var actual = serviceUnderTest.romanToInt(input);
 

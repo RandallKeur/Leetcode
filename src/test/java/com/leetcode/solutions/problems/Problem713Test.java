@@ -29,7 +29,7 @@ public class Problem713Test {
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void Problem713Test(int[] numbers, int max, int expected) {
+    public void testSolution_withParameterizedInputs(int[] numbers, int max, int expected) {
         // given & when
         final var actual = serviceUnderTest.numSubarrayProductLessThanK(numbers, max);
 

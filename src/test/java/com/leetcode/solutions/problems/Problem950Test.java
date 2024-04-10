@@ -26,7 +26,7 @@ public class Problem950Test {
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void Problem950Test(int[] input, int[] expected) {
+    public void testSolution_withParameterizedInputs(int[] input, int[] expected) {
         // given && when
         final var actual = serviceUnderTest.deckRevealedIncreasing(input);
 

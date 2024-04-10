@@ -24,11 +24,11 @@ public class Problem2958Test {
     }
 
     @BeforeEach
-    public void setUp() { this.serviceUnderTest = new Problem2958(); }
+    public void setup() { this.serviceUnderTest = new Problem2958(); }
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void Problem2958Test(int[] nums, int max, int expected) {
+    public void testSolution_withParameterizedInputs(int[] nums, int max, int expected) {
         // given && when
         final var actual = serviceUnderTest.maxSubarrayLength(nums, max);
 

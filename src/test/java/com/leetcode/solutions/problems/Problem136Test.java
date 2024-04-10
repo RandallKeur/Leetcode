@@ -25,11 +25,11 @@ public class Problem136Test {
     }
 
     @BeforeEach
-    public void Setup() { this.serviceUnderTest = new Problem136(); }
+    public void setup() { this.serviceUnderTest = new Problem136(); }
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void Problem136Tests(Integer[] input, Integer expected){
+    public void testSolution_withParameterizedInputs(Integer[] input, Integer expected){
         // given and when
         final var actual = serviceUnderTest.singleNumber(input);
 

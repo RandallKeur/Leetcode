@@ -29,7 +29,7 @@ public class Problem442Test {
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void Problem442Tests(int[] input, List<Integer> expected) {
+    public void testSolution_withParameterizedInputs(int[] input, List<Integer> expected) {
         // given & when
         final var actual = serviceUnderTest.findDuplicates(input);
 

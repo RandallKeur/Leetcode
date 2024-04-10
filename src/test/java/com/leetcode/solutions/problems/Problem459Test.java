@@ -24,11 +24,11 @@ public class Problem459Test {
     }
 
     @BeforeEach
-    public void Setup() { this.serviceUnderTest = new Problem459(); }
+    public void setup() { this.serviceUnderTest = new Problem459(); }
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void Problem459Tests(String input, boolean expected){
+    public void testSolution_withParameterizedInputs(String input, boolean expected){
         // given & when
         final var actual = serviceUnderTest.repeatedSubstringPattern(input);
 

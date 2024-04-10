@@ -31,20 +31,21 @@ public class Problem2Test {
     }
 
     @BeforeEach
-    public void Setup() { this.serviceUnderTest = new Problem2(); }
+    public void setup() { this.serviceUnderTest = new Problem2(); }
 
     @ParameterizedTest
     @MethodSource("TestCases")
     public void Problem2Tests(ListNode listNode1, ListNode listNode2, ListNode expected){
         // given & when
-        final var actual = serviceUnderTest.addTwoNumbers(listNode1, listNode2);
+        var actual = serviceUnderTest.addTwoNumbers(listNode1, listNode2);
 
         // then
         then(actual).isInstanceOf(expected.getClass());
         then(actual.val).isEqualTo(expected.val);
-        if (expected.next != null) {
-            then(actual.next.val).isEqualTo(expected.next.val);
-            then(actual.next.next.val).isEqualTo(expected.next.next.val);
+        while (expected.next != null) {
+            then(expected.val).isEqualTo(actual.val);
+            expected = expected.next;
+            actual = actual.next;
         }
     }
 }

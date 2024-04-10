@@ -26,7 +26,7 @@ public class Problem79Test {
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void Problem79Tests(char[][] board, String word, boolean expected) {
+    public void testSolution_withParameterizedInputs(char[][] board, String word, boolean expected) {
         // given && when
         final var actual = serviceUnderTest.exist(board, word);
 

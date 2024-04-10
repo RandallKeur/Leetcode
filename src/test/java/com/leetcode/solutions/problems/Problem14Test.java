@@ -27,7 +27,7 @@ public class Problem14Test {
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void Problem14Test(String[] input, String expected) {
+    public void testSolution_withParameterizedInputs(String[] input, String expected) {
         // given && when
         final var actual = serviceUnderTest.longestCommonPrefix(input);
 

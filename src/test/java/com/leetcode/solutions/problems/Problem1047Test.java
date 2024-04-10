@@ -27,13 +27,13 @@ public class Problem1047Test {
     }
 
     @BeforeEach
-    public void Setup(){
+    public void setup(){
         this.serviceUnderTest = new Problem1047();
     }
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void Problem1047Tests(String input, String expected) {
+    public void testSolution_withParameterizedInputs(String input, String expected) {
 
         //when
         final var actual = serviceUnderTest.removeDuplicates(input);

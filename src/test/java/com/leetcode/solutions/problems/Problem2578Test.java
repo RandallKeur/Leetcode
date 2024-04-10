@@ -26,7 +26,7 @@ public class Problem2578Test {
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void Problem2578Tests(int input, int expected) {
+    public void testSolution_withParameterizedInputs(int input, int expected) {
         // given && when
         final var actual = serviceUnderTest.splitNum(input);
 

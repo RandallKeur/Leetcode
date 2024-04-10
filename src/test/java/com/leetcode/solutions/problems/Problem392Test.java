@@ -26,11 +26,11 @@ class Problem392Test {
     }
 
     @BeforeEach
-    public void Setup() { this.serviceUnderTest = new Problem392(); }
+    public void setup() { this.serviceUnderTest = new Problem392(); }
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void Problem392TestsVersion1(String string1, String string2, Boolean expected) {
+    public void testSolution1_withParameterizedInputs(String string1, String string2, Boolean expected) {
         // given and when
         final var actual = serviceUnderTest.isSubsequence(string1, string2);
 
@@ -40,7 +40,7 @@ class Problem392Test {
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void Problem392TestsVersion2(String string1, String string2, Boolean expected) {
+    public void testSolution2_withParameterizedInputs(String string1, String string2, Boolean expected) {
         // given and when
         final var actual = serviceUnderTest.isSubsequenceVersion2(string1, string2);
 

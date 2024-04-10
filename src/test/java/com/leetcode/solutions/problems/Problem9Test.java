@@ -27,11 +27,11 @@ public class Problem9Test {
     }
 
     @BeforeEach
-    public void Setup() { this.serviceUnderTest = new Problem9(); };
+    public void setup() { this.serviceUnderTest = new Problem9(); };
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void Problem9Tests(Integer input, Boolean expected) {
+    public void testSolution_withParameterizedInputs(Integer input, Boolean expected) {
         // given & when
         final var actual = serviceUnderTest.isPalindrome(input);
 
