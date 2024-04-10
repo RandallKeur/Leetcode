@@ -24,13 +24,13 @@ class Problem2729Test {
     }
 
     @BeforeEach
-    public void Setup(){
+    public void setup(){
         this.serviceUnderTest = new Problem2729();
     }
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void Problem2729Tests(Integer input, boolean expected) {
+    public void testSolution_withParameterizedInputs(Integer input, boolean expected) {
 
         //when
         final var actual = serviceUnderTest.isFascinating(input);

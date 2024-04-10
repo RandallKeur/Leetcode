@@ -29,7 +29,7 @@ public class Problem7Test {
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void Problem7Tests(int input, int expected)
+    public void testSolution_withParameterizedInputs(int input, int expected)
     {
         // given & when
         final var actual = serviceUnderTest.reverse(input);

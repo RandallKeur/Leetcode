@@ -27,7 +27,7 @@ public class Problem1614Test {
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void Problem1614Test(String input, Integer expected) {
+    public void testSolution_withParameterizedInputs(String input, Integer expected) {
         // given && when
         final var actual = serviceUnderTest.maxDepth(input);
 

@@ -26,7 +26,7 @@ public class Problem1249Test {
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void Problem1249Test(String input, String expected) {
+    public void testSolution_withParameterizedInputs(String input, String expected) {
         // when && then
         final var actual = serviceUnderTest.minRemoveToMakeValid(input);
 

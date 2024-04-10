@@ -33,7 +33,7 @@ public class Problem21Test {
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void Problem21Test(ListNode list1, ListNode list2, ListNode expected) {
+    public void testSolution_withParameterizedInputs(ListNode list1, ListNode list2, ListNode expected) {
         // given && when
         var actual = serviceUnderTest.mergeTwoLists(list1, list2);
 

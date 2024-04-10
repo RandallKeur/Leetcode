@@ -25,7 +25,7 @@ public class Problem1700Test {
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void Problem1700Test(int[] students, int[] sandwiches, int expected) {
+    public void testSolution_withParameterizedInputs(int[] students, int[] sandwiches, int expected) {
         // given && when
         final var actual = serviceUnderTest.countStudents(students, sandwiches);
 

@@ -28,7 +28,7 @@ public class Problem58Test {
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void Problem58Tests(String input, int expected) {
+    public void testSolution_withParameterizedInputs(String input, int expected) {
         // given & when
         final var actual = serviceUnderTest.lengthOfLastWord(input);
 

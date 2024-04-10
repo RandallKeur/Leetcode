@@ -45,11 +45,11 @@ public class Problem111Test {
     }
 
     @BeforeEach
-    public void Setup() { this.serviceUnderTest = new Problem111(); }
+    public void setup() { this.serviceUnderTest = new Problem111(); }
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void Problem111Tests(TreeNode input, Integer expected) {
+    public void testSolution_withParameterizedInputs(TreeNode input, Integer expected) {
         // given
         // when
         var actual = serviceUnderTest.minDepth(input);

@@ -28,7 +28,7 @@ public class Problem41Test {
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void Problem41Tests(int[] input, int expected) {
+    public void testSolution_withParameterizedInputs(int[] input, int expected) {
         // given && when
         final var actual = serviceUnderTest.firstMissingPositive(input);
 

@@ -29,11 +29,11 @@ public class Problem229Test {
     }
 
     @BeforeEach
-    public void Setup() { this.serviceUnderTest = new Problem229(); }
+    public void setup() { this.serviceUnderTest = new Problem229(); }
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void Problem229Tests(Integer[] input, List<Integer> expected) {
+    public void testSolution_withParameterizedInputs(Integer[] input, List<Integer> expected) {
         // given & when
         final var actual = serviceUnderTest.majorityElement(input);
 

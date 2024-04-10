@@ -27,7 +27,7 @@ public class Problem2073Test {
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void Problem2073Test(int[] tickets, int position, int expected) {
+    public void testSolution_withParameterizedInputs(int[] tickets, int position, int expected) {
         // given && when
         final var actual = serviceUnderTest.timeRequiredToBuy(tickets, position);
 

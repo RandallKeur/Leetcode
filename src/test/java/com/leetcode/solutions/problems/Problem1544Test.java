@@ -26,7 +26,7 @@ public class Problem1544Test {
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void Problem1544Test(String input, String expected) {
+    public void testSolution_withParameterizedInputs(String input, String expected) {
         // given && when
         final var actual = serviceUnderTest.makeGood(input);
 
