@@ -9,27 +9,25 @@ import java.util.stream.Stream;
 
 import static org.assertj.core.api.BDDAssertions.then;
 
-class Problem13Test {
+public class Problem42Test {
 
-    private Problem13 serviceUnderTest;
+    private Problem42 serviceUnderTest;
+
     private static Stream<Arguments> TestCases() {
         return Stream.of(
-                Arguments.of("III", 3),
-                Arguments.of("LVIII", 58),
-                Arguments.of("MCMXCIV", 1994),
-                Arguments.of("IV", 4),
-                Arguments.of("LIV", 54)
+                Arguments.of(new int[] {0,1,0,2,1,0,1,3,2,1,2,1}, 6),
+                Arguments.of(new int[] {4,2,0,3,2,5}, 9)
         );
     }
 
     @BeforeEach
-    public void setup() { this.serviceUnderTest = new Problem13(); }
+    public void setup() { this.serviceUnderTest = new Problem42(); }
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void testSolution_withParameterizedInputs(String input, Integer expected) {
-        // given & when
-        final var actual = serviceUnderTest.romanToInt(input);
+    public void testSolution_withParameterizedInputs(int[] input, int expected) {
+        // given && when
+        final var actual = serviceUnderTest.trap(input);
 
         // then
         then(actual).isEqualTo(expected);
