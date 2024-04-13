@@ -1,7 +1,5 @@
 package com.leetcode.solutions.problems;
 
-import java.util.ArrayList;
-
 public class Problem713 {
     public int numSubarrayProductLessThanK(int[] nums, int max) {
         if (max <= 1)

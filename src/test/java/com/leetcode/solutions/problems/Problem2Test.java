@@ -1,7 +1,6 @@
 package com.leetcode.solutions.problems;
 
 import com.leetcode.solutions.customStructures.ListNode;
-import com.leetcode.solutions.problems.Problem2;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;

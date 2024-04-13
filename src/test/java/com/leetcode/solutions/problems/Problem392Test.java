@@ -1,6 +1,5 @@
 package com.leetcode.solutions.problems;
 
-import com.leetcode.solutions.problems.Problem392;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
