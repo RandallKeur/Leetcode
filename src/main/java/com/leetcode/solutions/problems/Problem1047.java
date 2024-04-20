@@ -21,7 +21,7 @@ public class Problem1047 {
         return convertStackToString(resultStack);
     }
 
-    private String convertStackToString(Stack<Character> input){
+    private String convertStackToString(Stack<Character> input) {
         return input.stream().map(Object::toString).collect(Collectors.joining(""));
     }
 
@@ -30,26 +30,25 @@ public class Problem1047 {
         var inputAsCharArray = s.toCharArray();
         var i = 0;
 
-        while (i < inputAsCharArray.length -1) {
-            if (inputAsCharArray[i] == inputAsCharArray[i+1]) {
+        while (i < inputAsCharArray.length - 1) {
+            if (inputAsCharArray[i] == inputAsCharArray[i + 1]) {
                 var newString = buildNewString(i, s);
                 return removeDuplicatesRecursion(newString);
-            }
-            else i++;
+            } else i++;
         }
 
         return s;
     }
 
-    private String buildNewString(Integer index, String s){
-        if (index == 0){
+    private String buildNewString(Integer index, String s) {
+        if (index == 0) {
             return s.substring(2);
         }
         if (index + 2 > s.length()) {
-            return s.substring(0,index);
+            return s.substring(0, index);
         }
-        var left = s.substring(0,index);
-        var right = s.substring(index+2);
+        var left = s.substring(0, index);
+        var right = s.substring(index + 2);
         return left.concat(right);
     }
 }

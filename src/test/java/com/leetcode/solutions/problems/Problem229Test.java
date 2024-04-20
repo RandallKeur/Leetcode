@@ -17,18 +17,20 @@ public class Problem229Test {
     private static Stream<Arguments> TestCases() {
         return Stream.of(
                 Arguments.of(new Integer[]{3, 2, 3}, List.of(3)),
-                Arguments.of(new Integer[] {1,2}, List.of(1,2)),
-                Arguments.of(new Integer[] {1}, List.of(1)),
-                Arguments.of(new Integer[] {1,2,3}, List.of()),
-                Arguments.of(new Integer[] {1,2,3,1}, List.of(1)),
-                Arguments.of(new Integer[] {1,2,1,2,3}, List.of(1,2)),
-                Arguments.of(new Integer[] {1,2,3,1,2,3,1,2,3,3}, List.of(3)),
-                Arguments.of(new Integer[] {1,2,3,4,2,3,4,2,3,4,2,3,4,2,3,4,2,3,4}, List.of())
+                Arguments.of(new Integer[]{1, 2}, List.of(1, 2)),
+                Arguments.of(new Integer[]{1}, List.of(1)),
+                Arguments.of(new Integer[]{1, 2, 3}, List.of()),
+                Arguments.of(new Integer[]{1, 2, 3, 1}, List.of(1)),
+                Arguments.of(new Integer[]{1, 2, 1, 2, 3}, List.of(1, 2)),
+                Arguments.of(new Integer[]{1, 2, 3, 1, 2, 3, 1, 2, 3, 3}, List.of(3)),
+                Arguments.of(new Integer[]{1, 2, 3, 4, 2, 3, 4, 2, 3, 4, 2, 3, 4, 2, 3, 4, 2, 3, 4}, List.of())
         );
     }
 
     @BeforeEach
-    public void setup() { this.serviceUnderTest = new Problem229(); }
+    public void setup() {
+        this.serviceUnderTest = new Problem229();
+    }
 
     @ParameterizedTest
     @MethodSource("TestCases")

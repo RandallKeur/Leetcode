@@ -19,12 +19,12 @@ public class Problem111Test {
         return Stream.of(
                 Arguments.of(
                         new TreeNode(
-                        3,
-                        new TreeNode(9),
-                        new TreeNode(
-                                20,
-                                new TreeNode(15),
-                                new TreeNode(7))), 2),
+                                3,
+                                new TreeNode(9),
+                                new TreeNode(
+                                        20,
+                                        new TreeNode(15),
+                                        new TreeNode(7))), 2),
                 Arguments.of(
                         new TreeNode(
                                 2,
@@ -43,7 +43,9 @@ public class Problem111Test {
     }
 
     @BeforeEach
-    public void setup() { this.serviceUnderTest = new Problem111(); }
+    public void setup() {
+        this.serviceUnderTest = new Problem111();
+    }
 
     @ParameterizedTest
     @MethodSource("TestCases")

@@ -13,7 +13,7 @@ public class Problem7Test {
 
     private Problem7 serviceUnderTest;
 
-    private static Stream<Arguments> TestCases(){
+    private static Stream<Arguments> TestCases() {
         return Stream.of(
                 Arguments.of(Integer.MAX_VALUE, 0),
                 Arguments.of(Integer.MIN_VALUE, 0),
@@ -24,12 +24,13 @@ public class Problem7Test {
     }
 
     @BeforeEach
-    public void setup() { this.serviceUnderTest = new Problem7(); }
+    public void setup() {
+        this.serviceUnderTest = new Problem7();
+    }
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void testSolution_withParameterizedInputs(int input, int expected)
-    {
+    public void testSolution_withParameterizedInputs(int input, int expected) {
         // given & when
         final var actual = serviceUnderTest.reverse(input);
 

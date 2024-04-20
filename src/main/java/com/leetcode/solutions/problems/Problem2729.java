@@ -22,7 +22,7 @@ public class Problem2729 {
     private boolean isFascinatingString(String concatenatedString) {
         //check for duplication
         var duplicateArray = new HashSet<>();
-        for (char num : concatenatedString.toCharArray()){
+        for (char num : concatenatedString.toCharArray()) {
             if (duplicateArray.contains(num))
                 return false;
             else
@@ -32,7 +32,7 @@ public class Problem2729 {
         return true;
     }
 
-    private String buildConcatenatedString(int n){
+    private String buildConcatenatedString(int n) {
         final var secondNumber = 2 * n;
         final var thirdNumber = 3 * n;
         return String.format("%s%s%s", n, secondNumber, thirdNumber);

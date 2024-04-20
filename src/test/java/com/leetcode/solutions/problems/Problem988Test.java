@@ -17,29 +17,31 @@ public class Problem988Test {
     private static Stream<Arguments> TestCases() {
         return Stream.of(
                 Arguments.of(new TreeNode(0,
-                        new TreeNode(1,
-                                new TreeNode(3), new TreeNode(4)),
-                        new TreeNode(2,
-                                new TreeNode(3), new TreeNode(4))),
+                                new TreeNode(1,
+                                        new TreeNode(3), new TreeNode(4)),
+                                new TreeNode(2,
+                                        new TreeNode(3), new TreeNode(4))),
                         "dba"),
                 Arguments.of(new TreeNode(25,
-                        new TreeNode(1,
-                                new TreeNode(1), new TreeNode(3)),
-                        new TreeNode(3,
-                                new TreeNode(0), new TreeNode(2))),
+                                new TreeNode(1,
+                                        new TreeNode(1), new TreeNode(3)),
+                                new TreeNode(3,
+                                        new TreeNode(0), new TreeNode(2))),
                         "adz"),
                 Arguments.of(new TreeNode(2,
-                        new TreeNode(2,
-                                null, new TreeNode(1,
-                                null, new TreeNode(0))),
-                        new TreeNode(1,
-                                null, new TreeNode(0))),
+                                new TreeNode(2,
+                                        null, new TreeNode(1,
+                                        null, new TreeNode(0))),
+                                new TreeNode(1,
+                                        null, new TreeNode(0))),
                         "abc")
         );
     }
 
     @BeforeEach
-    public void setup() { this.serviceUnderTest = new Problem988(); }
+    public void setup() {
+        this.serviceUnderTest = new Problem988();
+    }
 
     @ParameterizedTest
     @MethodSource("TestCases")

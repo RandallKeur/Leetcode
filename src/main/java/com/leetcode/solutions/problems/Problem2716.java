@@ -11,7 +11,7 @@ public class Problem2716 {
     private HashSet<Character> buildUniqueCharacterSet(String s) {
         var inputAsCharArray = s.toCharArray();
         var uniqueChars = new HashSet<Character>();
-        for (char c : inputAsCharArray){
+        for (char c : inputAsCharArray) {
             uniqueChars.add(c);
         }
         return uniqueChars;

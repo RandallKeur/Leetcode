@@ -14,16 +14,15 @@ public class Problem507 {
     }
 
     private HashSet<Integer> buildSetOfDivisors(Integer input) {
-        final var set = new HashSet<Integer>() {};
+        final var set = new HashSet<Integer>() {
+        };
         set.add(1);
 
         var iterator = 2;
-        while (iterator <= Math.sqrt(input))
-        {
-            if(input % iterator == 0)
-            {
+        while (iterator <= Math.sqrt(input)) {
+            if (input % iterator == 0) {
                 set.add(iterator);
-                set.add(input/iterator);
+                set.add(input / iterator);
             }
             iterator++;
         }

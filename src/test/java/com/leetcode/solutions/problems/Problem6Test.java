@@ -23,8 +23,11 @@ public class Problem6Test {
                 Arguments.of("PAYPALISHIRINGDEVELOPERS", 8, "PDAGEYNVPIEARLLIOSIHPRSE")
         );
     }
+
     @BeforeEach
-    public void setup() { this.serviceUnderTest = new Problem6(); }
+    public void setup() {
+        this.serviceUnderTest = new Problem6();
+    }
 
     @ParameterizedTest
     @MethodSource("TestCases")

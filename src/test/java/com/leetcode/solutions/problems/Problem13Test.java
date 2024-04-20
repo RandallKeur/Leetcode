@@ -12,6 +12,7 @@ import static org.assertj.core.api.BDDAssertions.then;
 class Problem13Test {
 
     private Problem13 serviceUnderTest;
+
     private static Stream<Arguments> TestCases() {
         return Stream.of(
                 Arguments.of("III", 3),
@@ -23,7 +24,9 @@ class Problem13Test {
     }
 
     @BeforeEach
-    public void setup() { this.serviceUnderTest = new Problem13(); }
+    public void setup() {
+        this.serviceUnderTest = new Problem13();
+    }
 
     @ParameterizedTest
     @MethodSource("TestCases")

@@ -5,8 +5,7 @@ public class Problem392 {
         var subsequenceCharArray = subsequence.toCharArray();
         var startingIndex = 0;
         var newIndex = 0;
-        for (char c : subsequenceCharArray)
-        {
+        for (char c : subsequenceCharArray) {
             if (stringToCheck.length() < startingIndex + 1) {
                 return false;
             }
@@ -21,10 +20,9 @@ public class Problem392 {
 
     public Boolean isSubsequenceVersion2(String subsequence, String stringToCheck) {
         var subsequenceCharArray = subsequence.toCharArray();
-        for (char c : subsequenceCharArray)
-        {
+        for (char c : subsequenceCharArray) {
             var indexOfCharacter = stringToCheck.indexOf(c);
-            if (indexOfCharacter == -1){
+            if (indexOfCharacter == -1) {
                 return false;
             }
             stringToCheck = stringToCheck.substring(indexOfCharacter + 1);

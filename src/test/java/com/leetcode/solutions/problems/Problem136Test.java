@@ -15,20 +15,22 @@ public class Problem136Test {
 
     private static Stream<Arguments> TestCases() {
         return Stream.of(
-                Arguments.of(new Integer[] {2,2,1}, 1),
-                Arguments.of(new Integer[] {4,1,2,1,2}, 4),
-                Arguments.of(new Integer[] {1}, 1),
-                Arguments.of(new Integer[] {4,1,2,2,1}, 4),
-                Arguments.of(new Integer[] {1,2,4,2,1}, 4)
+                Arguments.of(new Integer[]{2, 2, 1}, 1),
+                Arguments.of(new Integer[]{4, 1, 2, 1, 2}, 4),
+                Arguments.of(new Integer[]{1}, 1),
+                Arguments.of(new Integer[]{4, 1, 2, 2, 1}, 4),
+                Arguments.of(new Integer[]{1, 2, 4, 2, 1}, 4)
         );
     }
 
     @BeforeEach
-    public void setup() { this.serviceUnderTest = new Problem136(); }
+    public void setup() {
+        this.serviceUnderTest = new Problem136();
+    }
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void testSolution_withParameterizedInputs(Integer[] input, Integer expected){
+    public void testSolution_withParameterizedInputs(Integer[] input, Integer expected) {
         // given and when
         final var actual = serviceUnderTest.singleNumber(input);
 
