@@ -11,14 +11,14 @@ public class Problem13 {
         // Loop
         for (var currentIndex = 0; currentIndex < sCharArray.length; currentIndex++) {
             var nextIndex = currentIndex;
-            if (currentIndex != sCharArray.length -1){
+            if (currentIndex != sCharArray.length - 1) {
                 nextIndex = currentIndex + 1;
             }
             // Lookup values
             var currentInteger = romanDictionary.get(sCharArray[currentIndex]);
             var nextInteger = romanDictionary.get(sCharArray[nextIndex]);
             // Handle odd case
-            if (nextInteger > currentInteger){
+            if (nextInteger > currentInteger) {
                 runningTotal = runningTotal + (nextInteger - currentInteger);
                 currentIndex++;
             }
@@ -31,7 +31,7 @@ public class Problem13 {
         return runningTotal;
     }
 
-    private static HashMap<Character, Integer> buildRomanDictionary(){
+    private static HashMap<Character, Integer> buildRomanDictionary() {
         var dictionary = new HashMap<Character, Integer>();
         dictionary.put('I', 1);
         dictionary.put('V', 5);

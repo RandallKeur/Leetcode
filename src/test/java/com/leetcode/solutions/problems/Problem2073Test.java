@@ -16,14 +16,17 @@ public class Problem2073Test {
 
     private static Stream<Arguments> TestCases() {
         return Stream.of(
-                Arguments.of(new int[] {2,3,2}, 2, 6),
-                Arguments.of(new int[] {5,1,1,1}, 0, 8),
-                Arguments.of( new int[] {5,1,1,1}, 1, 2),
-                Arguments.of( new int[] {5,1,2,2,1}, 3, 8)
+                Arguments.of(new int[]{2, 3, 2}, 2, 6),
+                Arguments.of(new int[]{5, 1, 1, 1}, 0, 8),
+                Arguments.of(new int[]{5, 1, 1, 1}, 1, 2),
+                Arguments.of(new int[]{5, 1, 2, 2, 1}, 3, 8)
         );
     }
+
     @BeforeEach
-    public void setup() { this.serviceUnderTest = new Problem2073(); }
+    public void setup() {
+        this.serviceUnderTest = new Problem2073();
+    }
 
     @ParameterizedTest
     @MethodSource("TestCases")

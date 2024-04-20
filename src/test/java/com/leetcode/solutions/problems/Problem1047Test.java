@@ -26,7 +26,7 @@ public class Problem1047Test {
     }
 
     @BeforeEach
-    public void setup(){
+    public void setup() {
         this.serviceUnderTest = new Problem1047();
     }
 

@@ -15,7 +15,7 @@ public class Problem6 {
             while (columnIndex < length) {
                 result.append(input.charAt(columnIndex));
                 if (i != 0 && i != numberOfRows - 1) {
-                    diagonalDiff = columnDiff -2*i;
+                    diagonalDiff = columnDiff - 2 * i;
                     diagonalIndex = columnIndex + diagonalDiff;
 
                     if (diagonalIndex < length) {

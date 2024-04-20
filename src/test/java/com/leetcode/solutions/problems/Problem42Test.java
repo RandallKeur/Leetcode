@@ -15,13 +15,15 @@ public class Problem42Test {
 
     private static Stream<Arguments> TestCases() {
         return Stream.of(
-                Arguments.of(new int[] {0,1,0,2,1,0,1,3,2,1,2,1}, 6),
-                Arguments.of(new int[] {4,2,0,3,2,5}, 9)
+                Arguments.of(new int[]{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1}, 6),
+                Arguments.of(new int[]{4, 2, 0, 3, 2, 5}, 9)
         );
     }
 
     @BeforeEach
-    public void setup() { this.serviceUnderTest = new Problem42(); }
+    public void setup() {
+        this.serviceUnderTest = new Problem42();
+    }
 
     @ParameterizedTest
     @MethodSource("TestCases")

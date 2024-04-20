@@ -13,18 +13,20 @@ public class Problem713Test {
 
     private Problem713 serviceUnderTest;
 
-    private static Stream<Arguments> TestCases(){
+    private static Stream<Arguments> TestCases() {
         return Stream.of(
-                Arguments.of(new int[] {10,5,2,6}, 100, 8),
-                Arguments.of(new int[] {1,2,3}, 0, 0 ),
-                Arguments.of(new int[] {1,2,3,4,5,6}, 60, 14),
-                Arguments.of(new int[] {1,5,2,6}, 70, 10),
-                Arguments.of(new int[] {2,2,2,2}, 9, 9)
+                Arguments.of(new int[]{10, 5, 2, 6}, 100, 8),
+                Arguments.of(new int[]{1, 2, 3}, 0, 0),
+                Arguments.of(new int[]{1, 2, 3, 4, 5, 6}, 60, 14),
+                Arguments.of(new int[]{1, 5, 2, 6}, 70, 10),
+                Arguments.of(new int[]{2, 2, 2, 2}, 9, 9)
         );
     }
 
     @BeforeEach
-    public void setup() { this.serviceUnderTest = new Problem713(); }
+    public void setup() {
+        this.serviceUnderTest = new Problem713();
+    }
 
     @ParameterizedTest
     @MethodSource("TestCases")

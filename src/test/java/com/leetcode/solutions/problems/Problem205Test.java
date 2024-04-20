@@ -16,7 +16,7 @@ public class Problem205Test {
     private static Stream<Arguments> TestCases() {
         return Stream.of(
                 Arguments.of("egg", "add", true),
-                Arguments.of("foo","bar", false),
+                Arguments.of("foo", "bar", false),
                 Arguments.of("food", "eggs", true),
                 Arguments.of("food", "acai", false),
                 Arguments.of("paper", "title", true),
@@ -28,7 +28,9 @@ public class Problem205Test {
 
 
     @BeforeEach
-    public void setup() { this.serviceUnderTest = new Problem205(); }
+    public void setup() {
+        this.serviceUnderTest = new Problem205();
+    }
 
     @ParameterizedTest
     @MethodSource("TestCases")

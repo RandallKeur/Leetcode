@@ -19,8 +19,8 @@ public class Problem21Test {
                 Arguments.of(null, new ListNode(0, null), new ListNode(0, null)),
                 Arguments.of(new ListNode(1, new ListNode(2, new ListNode(4, null))),
                         new ListNode(1, new ListNode(3, new ListNode(4))),
-                new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3,
-                new ListNode(4, new ListNode(4, null))))))),
+                        new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3,
+                                new ListNode(4, new ListNode(4, null))))))),
                 Arguments.of(new ListNode(1, new ListNode(4, null)),
                         new ListNode(2, new ListNode(2, new ListNode(3, null))),
                         new ListNode(1, new ListNode(2, new ListNode(2, new ListNode(3,
@@ -29,7 +29,9 @@ public class Problem21Test {
     }
 
     @BeforeEach
-    public void setup() { this .serviceUnderTest = new Problem21(); }
+    public void setup() {
+        this.serviceUnderTest = new Problem21();
+    }
 
     @ParameterizedTest
     @MethodSource("TestCases")

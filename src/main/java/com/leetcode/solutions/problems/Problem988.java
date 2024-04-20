@@ -12,7 +12,7 @@ public class Problem988 {
     private void dfs(TreeNode node, StringBuilder path, StringBuilder smallest) {
         if (node == null) return;
 
-        path.append((char)('a' + node.val));
+        path.append((char) ('a' + node.val));
 
         if (node.left == null && node.right == null) {
             String currentString = path.reverse().toString();

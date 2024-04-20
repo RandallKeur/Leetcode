@@ -23,7 +23,9 @@ public class Problem678Test {
     }
 
     @BeforeEach
-    public void setup() { this.serviceUnderTest = new Problem678(); }
+    public void setup() {
+        this.serviceUnderTest = new Problem678();
+    }
 
     @ParameterizedTest
     @MethodSource("TestCases")

@@ -10,7 +10,7 @@ public class Problem200 {
         y = grid.length;
         if (y == 0) return 0;
         x = grid[0].length;
-        for (int i = 0; i < y; i++){
+        for (int i = 0; i < y; i++) {
             for (int j = 0; j < x; j++)
                 if (grid[i][j] == '1') {
                     DFSMarking(grid, i, j);

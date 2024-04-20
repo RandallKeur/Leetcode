@@ -8,7 +8,7 @@ public class Problem136 {
 
         var dictionary = new HashMap<Integer, Integer>();
 
-        for (var num: nums) {
+        for (var num : nums) {
             if (dictionary.get(num) == null)
                 dictionary.put(num, 1);
             else

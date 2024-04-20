@@ -11,12 +11,10 @@ public class Problem205 {
         for (var i = 0; i < length; i++) {
             var record = map.get(input1.charAt(i));
             var valueExists = map.containsValue(input2.charAt(i));
-            if (record == null)
-            {
+            if (record == null) {
                 if (valueExists) return Boolean.FALSE;
                 map.put(input1.charAt(i), input2.charAt(i));
-            }
-            else {
+            } else {
                 if (!record.equals(input2.charAt(i)))
                     return Boolean.FALSE;
             }

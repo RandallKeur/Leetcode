@@ -15,13 +15,16 @@ public class Problem79Test {
 
     private static Stream<Arguments> TestCases() {
         return Stream.of(
-                Arguments.of(new char[][]{{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}}, "ABCCED", true),
-                Arguments.of(new char[][] {{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}}, "SEE", true),
-                Arguments.of(new char[][] {{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}}, "ABCB", false)
+                Arguments.of(new char[][]{{'A', 'B', 'C', 'E'}, {'S', 'F', 'C', 'S'}, {'A', 'D', 'E', 'E'}}, "ABCCED", true),
+                Arguments.of(new char[][]{{'A', 'B', 'C', 'E'}, {'S', 'F', 'C', 'S'}, {'A', 'D', 'E', 'E'}}, "SEE", true),
+                Arguments.of(new char[][]{{'A', 'B', 'C', 'E'}, {'S', 'F', 'C', 'S'}, {'A', 'D', 'E', 'E'}}, "ABCB", false)
         );
     }
+
     @BeforeEach
-    public void setup() { this.serviceUnderTest = new Problem79(); }
+    public void setup() {
+        this.serviceUnderTest = new Problem79();
+    }
 
     @ParameterizedTest
     @MethodSource("TestCases")

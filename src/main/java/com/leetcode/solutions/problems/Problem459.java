@@ -8,16 +8,16 @@ public class Problem459 {
         var repeats = 0;
         var stringToTest = "";
         final var stringLength = s.length();
-        if (s.length() == 1){
+        if (s.length() == 1) {
             return Boolean.FALSE;
         }
-        for (char c : charArray){
+        for (char c : charArray) {
             workingString.append(c);
 
             if (stringLength % workingString.length() != 0)
                 continue;
 
-            if (workingString.length() > stringLength/2 )
+            if (workingString.length() > stringLength / 2)
                 return false;
 
             repeats = stringLength / workingString.length();

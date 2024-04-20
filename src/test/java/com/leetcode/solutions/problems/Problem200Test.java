@@ -15,23 +15,25 @@ public class Problem200Test {
 
     private static Stream<Arguments> TestCases() {
         return Stream.of(
-                Arguments.of(new char[][] {
-                        {'1','1','1','1','0'},
-                        {'1','1','0','1','0'},
-                        {'1','1','0','0','0'},
-                        {'0','0','0','0','0'}},
+                Arguments.of(new char[][]{
+                                {'1', '1', '1', '1', '0'},
+                                {'1', '1', '0', '1', '0'},
+                                {'1', '1', '0', '0', '0'},
+                                {'0', '0', '0', '0', '0'}},
                         1),
-                Arguments.of(new char[][] {
-                        {'1','1','0','0','0'},
-                        {'1','1','0','0','0'},
-                        {'0','0','1','0','0'},
-                        {'0','0','0','1','1'}},
+                Arguments.of(new char[][]{
+                                {'1', '1', '0', '0', '0'},
+                                {'1', '1', '0', '0', '0'},
+                                {'0', '0', '1', '0', '0'},
+                                {'0', '0', '0', '1', '1'}},
                         3)
         );
     }
 
     @BeforeEach
-    public void setup() { this.serviceUnderTest = new Problem200(); }
+    public void setup() {
+        this.serviceUnderTest = new Problem200();
+    }
 
     @ParameterizedTest
     @MethodSource("TestCases")

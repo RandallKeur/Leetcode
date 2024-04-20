@@ -7,11 +7,11 @@ public class Problem1700 {
         var queue = new LinkedList<Integer>();
         int top = 0, count = 0;
 
-        for(int e : students)
+        for (int e : students)
             queue.add(e);
 
-        while(!queue.isEmpty() && count != queue.size()){
-            if(queue.peek() == sandwiches[top]) {
+        while (!queue.isEmpty() && count != queue.size()) {
+            if (queue.peek() == sandwiches[top]) {
                 count = 0;
                 top++;
                 queue.poll();

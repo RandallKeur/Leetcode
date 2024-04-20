@@ -22,7 +22,7 @@ public class Problem2Test {
                         new ListNode(0, null),
                         new ListNode(0, null)),
                 Arguments.of(new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9,
-                            new ListNode(9, new ListNode(9, new ListNode(9, null))))))),
+                                new ListNode(9, new ListNode(9, new ListNode(9, null))))))),
                         new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, null)))),
                         new ListNode(8, new ListNode(9, new ListNode(9, new ListNode(9,
                                 new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(1, null)))))))))
@@ -30,11 +30,13 @@ public class Problem2Test {
     }
 
     @BeforeEach
-    public void setup() { this.serviceUnderTest = new Problem2(); }
+    public void setup() {
+        this.serviceUnderTest = new Problem2();
+    }
 
     @ParameterizedTest
     @MethodSource("TestCases")
-    public void Problem2Tests(ListNode listNode1, ListNode listNode2, ListNode expected){
+    public void Problem2Tests(ListNode listNode1, ListNode listNode2, ListNode expected) {
         // given & when
         var actual = serviceUnderTest.addTwoNumbers(listNode1, listNode2);
 
