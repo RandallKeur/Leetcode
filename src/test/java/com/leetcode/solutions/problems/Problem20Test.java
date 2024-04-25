@@ -17,7 +17,8 @@ public class Problem20Test {
         return Stream.of(
                 Arguments.of("{}[]()", Boolean.TRUE),
                 Arguments.of("{]", Boolean.FALSE),
-                Arguments.of("{[()]]", Boolean.FALSE)
+                Arguments.of("{[()]]", Boolean.FALSE),
+                Arguments.of("[", Boolean.FALSE)
         );
     }
 
