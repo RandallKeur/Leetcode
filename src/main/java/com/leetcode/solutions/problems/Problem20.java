@@ -16,6 +16,6 @@ public class Problem20 {
             else if (stack.empty() || stack.pop() != character)
                 return Boolean.FALSE;
         }
-        return Boolean.TRUE;
+        return stack.isEmpty();
     }
 }
