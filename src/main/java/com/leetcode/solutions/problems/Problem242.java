@@ -24,13 +24,15 @@ public class Problem242 {
 
     private void countUpLetters(HashMap<Character, Integer> dictionary, String firstWord) {
         for (char letter : firstWord.toCharArray()) {
-            dictionary.put(letter, dictionary.getOrDefault(letter, 0) + 1);
+            var currentCount = dictionary.getOrDefault(letter, 0);
+            dictionary.put(letter, currentCount + 1);
         }
     }
 
     private void countDownLetters(HashMap<Character, Integer> dictionary, String secondWord) {
         for (char letter : secondWord.toCharArray()) {
-            dictionary.put(letter, dictionary.getOrDefault(letter, 0) - 1);
+            var currentCount = dictionary.getOrDefault(letter, 0);
+            dictionary.put(letter, currentCount - 1);
         }
     }
 }
