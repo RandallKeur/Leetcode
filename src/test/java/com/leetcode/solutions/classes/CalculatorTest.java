@@ -1,4 +1,4 @@
-package com.leetcode.solutions.problems;
+package com.leetcode.solutions.classes;
 
 import com.leetcode.solutions.customStructures.ListNode;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,10 +10,10 @@ import java.util.stream.Stream;
 
 import static org.assertj.core.api.BDDAssertions.then;
 
-public class Problem2Test {
-    private Problem2 serviceUnderTest;
+public class CalculatorTest {
+    private Calculator serviceUnderTest;
 
-    private static Stream<Arguments> TestCases() {
+    private static Stream<Arguments> AddTwoNumbersTestCases() {
         return Stream.of(
                 Arguments.of(new ListNode(2, new ListNode(4, new ListNode(3, null))),
                         new ListNode(5, new ListNode(6, new ListNode(4, null))),
@@ -29,13 +29,22 @@ public class Problem2Test {
         );
     }
 
+    private static Stream<Arguments> ConvertTempTestCases() {
+        return Stream.of(
+                Arguments.of(36.50, new double[]{309.65000, 97.70000}),
+                Arguments.of(122.11, new double[]{395.26000, 251.79800}),
+                Arguments.of(1.32, new double[]{274.47000, 34.37600}),
+                Arguments.of(453.11, new double[]{726.26000, 847.59800})
+        );
+    }
+
     @BeforeEach
     public void setup() {
-        this.serviceUnderTest = new Problem2();
+        this.serviceUnderTest = new Calculator();
     }
 
     @ParameterizedTest
-    @MethodSource("TestCases")
+    @MethodSource("AddTwoNumbersTestCases")
     public void Problem2Tests(ListNode listNode1, ListNode listNode2, ListNode expected) {
         // given & when
         var actual = serviceUnderTest.addTwoNumbers(listNode1, listNode2);
@@ -48,5 +57,15 @@ public class Problem2Test {
             expected = expected.next;
             actual = actual.next;
         }
+    }
+
+    @ParameterizedTest
+    @MethodSource("ConvertTempTestCases")
+    public void testConvertTemp_withParameterizedInputs(double input, double[] expected) {
+        // given && when
+        final var actual = serviceUnderTest.convertTemperature(input);
+
+        // then
+        then(actual).isEqualTo(expected);
     }
 }

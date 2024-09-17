@@ -1,4 +1,4 @@
-package com.leetcode.solutions.problems;
+package com.leetcode.solutions.classes;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -315,7 +315,7 @@ public class StringManipulationTest {
 
     @ParameterizedTest
     @MethodSource("MinimizedStringLengthTestCases")
-    public void testSolution_withParameterizedInputs(String input, int expected) {
+    public void testMinimizedStringLength_withParameterizedInputs(String input, int expected) {
         //when
         final var actual = serviceUnderTest.minimizedStringLength(input);
 
