@@ -1,4 +1,4 @@
-package com.leetcode.solutions.problems;
+package com.leetcode.solutions.classes;
 
 import com.leetcode.solutions.customStructures.TreeNode;
 import org.junit.jupiter.api.BeforeEach;
