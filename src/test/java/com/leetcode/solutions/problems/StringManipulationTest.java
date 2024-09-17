@@ -315,7 +315,7 @@ public class StringManipulationTest {
 
     @ParameterizedTest
     @MethodSource("MinimizedStringLengthTestCases")
-    public void testSolution_withParameterizedInputs(String input, int expected) {
+    public void testMinimizedStringLength_withParameterizedInputs(String input, int expected) {
         //when
         final var actual = serviceUnderTest.minimizedStringLength(input);
 

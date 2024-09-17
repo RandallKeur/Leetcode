@@ -2,7 +2,10 @@ package com.leetcode.solutions.problems;
 
 import com.leetcode.solutions.customStructures.ListNode;
 
-public class Problem2 {
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
+public class Calculator {
     private Integer remainder = null;
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
@@ -19,5 +22,21 @@ public class Problem2 {
             resultListNode.next = addTwoNumbers(l1.next, l2.next);
         }
         return resultListNode;
+    }
+
+    public double[] convertTemperature(double input) {
+        final var kelvin = input + 273.15;
+        final var fahrenheit = input * 1.80 + 32.00;
+        return new double[]{
+                roundToDecimalPlaces(kelvin, 5),
+                roundToDecimalPlaces(fahrenheit, 5)
+        };
+    }
+
+    private double roundToDecimalPlaces(double value, int decimalPlaces) {
+        return BigDecimal
+                .valueOf(value)
+                .setScale(decimalPlaces, RoundingMode.HALF_UP)
+                .doubleValue();
     }
 }
