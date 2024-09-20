@@ -5,6 +5,8 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Stream;
 
 import static org.assertj.core.api.BDDAssertions.then;
@@ -163,6 +165,14 @@ public class StringManipulationTest {
                 Arguments.of("zaz", 50),
                 Arguments.of("hh", 0),
                 Arguments.of("rememberthetitans", 155)
+        );
+    }
+
+    public static Stream<Arguments> FindWordsContainingTestCases() {
+        return Stream.of(
+                Arguments.of(new String[] {"leet", "code" }, "e", List.of(0, 1)),
+                Arguments.of(new String[] { "abc","bcd","aaaa","cbc" }, "a", List.of(0,2)),
+                Arguments.of(new String[] {"abc","bcd","aaaa","cbc"}, "z", List.of())
         );
     }
 
@@ -338,6 +348,16 @@ public class StringManipulationTest {
     public void testScoreOfString_withParameterizedTest(String input, Integer expected) {
         // given && when
         final var actual = serviceUnderTest.scoreOfString(input);
+
+        // then
+        then(actual).isEqualTo(expected);
+    }
+
+    @ParameterizedTest
+    @MethodSource("FindWordsContainingTestCases")
+    public void testFindWordsContaining_withParameterizedInputs(String[] word, Character character, List<Integer> expected) {
+        // given && when
+        final var actual = serviceUnderTest.findWordsContaining(word, character);
 
         // then
         then(actual).isEqualTo(expected);

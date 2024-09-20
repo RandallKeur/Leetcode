@@ -1,9 +1,6 @@
 package com.leetcode.solutions.classes;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Stack;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class StringManipulation {
@@ -341,5 +338,15 @@ public class StringManipulation {
 
     private int getAsciiValue(char character) {
         return character;
+    }
+
+    public List<Integer> findWordsContaining(String[] words, char x) {
+        List<Integer> result = new ArrayList<>();
+        for(int i = 0; i < words.length; i++){
+            if(words[i].indexOf(x) != -1) {
+                result.add(i);
+            }
+        }
+        return result;
     }
 }
