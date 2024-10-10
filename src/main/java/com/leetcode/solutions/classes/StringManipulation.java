@@ -349,4 +349,39 @@ public class StringManipulation {
         }
         return result;
     }
+
+    public int countCharacters(String[] words, String chars) {
+        final var originalDictionary = buildDictionary(chars);
+        var sum = 0;
+        for (var word : words) {
+            var charDictionary = new HashMap<>(originalDictionary);
+            if (canBuildString(word, charDictionary)) {
+                sum += word.length();
+            }
+        }
+        return sum;
+    }
+
+    private Boolean canBuildString(String input, HashMap<Character, Integer> dictionary) {
+        for (var c : input.toCharArray()) {
+            if (dictionary.containsKey(c))  {
+                dictionary.put(c, dictionary.get(c) - 1);
+            }
+            else {
+                return false;
+            }
+            if (dictionary.get(c) < 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private HashMap<Character, Integer> buildDictionary(String chars) {
+        final var dictionary =  new HashMap<Character, Integer>();
+        for (var c : chars.toCharArray()) {
+            dictionary.put(c,dictionary.getOrDefault(c,0) + 1);
+        }
+        return dictionary;
+    }
 }

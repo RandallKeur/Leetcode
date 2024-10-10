@@ -175,6 +175,14 @@ public class StringManipulationTest {
         );
     }
 
+    public static Stream<Arguments> CountCharactersTestCases() {
+        return Stream.of(
+                Arguments.of(new String[]{"cat","bt","hat","tree"}, "atach", 6),
+                Arguments.of(new String[] {"hello","world","leetcode"}, "welldonehoneyr", 10),
+                Arguments.of(new String[] {"hello","world","leetcode"}, "weldonehoneyr", 5)
+        );
+    }
+
     @BeforeEach
     public void setup() {
         this.serviceUnderTest = new StringManipulation();
@@ -357,6 +365,16 @@ public class StringManipulationTest {
     public void testFindWordsContaining_withParameterizedInputs(String[] word, Character character, List<Integer> expected) {
         // given && when
         final var actual = serviceUnderTest.findWordsContaining(word, character);
+
+        // then
+        then(actual).isEqualTo(expected);
+    }
+
+    @ParameterizedTest
+    @MethodSource("CountCharactersTestCases")
+    public void testCountCharacters_withParameterizedTest(String[] words, String chars, Integer expected) {
+        // given && when
+        final var actual = serviceUnderTest.countCharacters(words, chars);
 
         // then
         then(actual).isEqualTo(expected);
