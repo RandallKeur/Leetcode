@@ -364,18 +364,14 @@ public class StringManipulation {
 
     private Boolean canBuildString(String input, HashMap<Character, Integer> dictionary) {
         for (var c : input.toCharArray()) {
-            if (dictionary.containsKey(c))  {
-                dictionary.put(c, dictionary.get(c) - 1);
-            }
-            else {
+            if (dictionary.getOrDefault(c,0) == 0) {
                 return false;
             }
-            if (dictionary.get(c) < 0) {
-                return false;
-            }
+            dictionary.put(c, dictionary.get(c) - 1);
         }
         return true;
     }
+
 
     private HashMap<Character, Integer> buildDictionary(String chars) {
         final var dictionary =  new HashMap<Character, Integer>();
