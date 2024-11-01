@@ -380,4 +380,21 @@ public class StringManipulation {
         }
         return dictionary;
     }
+
+    public String makeFancyString(String input) {
+        var result = new StringBuilder();
+        var consecutive = 0;
+        char previousLetter = 0;
+        for (var i = 0; i < input.length(); i++) {
+            var currentLetter = input.charAt(i);
+            if (currentLetter == previousLetter)
+                consecutive++;
+            else
+                consecutive = 0;
+            if (consecutive < 2)
+                result.append(currentLetter);
+            previousLetter = currentLetter;
+        }
+        return result.toString();
+    }
 }
