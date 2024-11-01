@@ -183,6 +183,15 @@ public class StringManipulationTest {
         );
     }
 
+    public static Stream<Arguments> MakeFancyStringTestCase() {
+        return Stream.of(
+                Arguments.of("leeetcode", "leetcode"),
+                Arguments.of("aaabaaaa", "aabaa"),
+                Arguments.of("aab", "aab"),
+                Arguments.of("testttttiiinnnnggggg", "testtiinngg")
+        );
+    }
+
     @BeforeEach
     public void setup() {
         this.serviceUnderTest = new StringManipulation();
@@ -375,6 +384,16 @@ public class StringManipulationTest {
     public void testCountCharacters_withParameterizedTest(String[] words, String chars, Integer expected) {
         // given && when
         final var actual = serviceUnderTest.countCharacters(words, chars);
+
+        // then
+        then(actual).isEqualTo(expected);
+    }
+
+    @ParameterizedTest
+    @MethodSource("MakeFancyStringTestCase")
+    public void testMakeFancyString_withParameterizedTest(String input, String expected) {
+        // given && when
+        final var actual = serviceUnderTest.makeFancyString(input);
 
         // then
         then(actual).isEqualTo(expected);
