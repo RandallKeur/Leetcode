@@ -133,6 +133,16 @@ public class NumberOperatorTest {
                 Arguments.of(327, true));
     }
 
+    private static Stream<Arguments> RomanToIntTestCases() {
+        return Stream.of(
+                Arguments.of("III", 3),
+                Arguments.of("LVIII", 58),
+                Arguments.of("MCMXCIV", 1994),
+                Arguments.of("IV", 4),
+                Arguments.of("LIV", 54)
+        );
+    }
+
     @BeforeEach
     public void setup() {
         this.serviceUnderTest = new NumberOperator();
@@ -256,6 +266,16 @@ public class NumberOperatorTest {
         final var actual = serviceUnderTest.isFascinating(input);
 
         //then
+        then(actual).isEqualTo(expected);
+    }
+
+    @ParameterizedTest
+    @MethodSource("RomanToIntTestCases")
+    public void testSolution_withParameterizedInputs(String input, Integer expected) {
+        // given & when
+        final var actual = serviceUnderTest.romanToInt(input);
+
+        // then
         then(actual).isEqualTo(expected);
     }
 }
