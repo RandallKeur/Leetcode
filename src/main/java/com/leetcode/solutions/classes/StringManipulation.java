@@ -397,4 +397,15 @@ public class StringManipulation {
         }
         return result.toString();
     }
+
+    public int numJewelsInStones(String jewels, String stones) {
+        var stonesDictionary = buildDictionary(stones);
+
+        var totalJewels = 0;
+        for (char c : jewels.toCharArray()) {
+            totalJewels += stonesDictionary.getOrDefault(c, 0);
+        }
+
+        return totalJewels;
+    }
 }

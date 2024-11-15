@@ -192,6 +192,16 @@ public class StringManipulationTest {
         );
     }
 
+    public static Stream<Arguments> NumJewelsInStonesTestCase() {
+        return Stream.of(
+                Arguments.of("aA", "aAAbbbb", 3),
+                Arguments.of("z", "zZ", 1),
+                Arguments.of("z", "ZZ", 0),
+                Arguments.of("aAbcd", "aAAbbbbasdfgASDF", 10),
+                Arguments.of("aAbcdDF", "aAAbbbbasdfgASDF", 12)
+        );
+    }
+
     @BeforeEach
     public void setup() {
         this.serviceUnderTest = new StringManipulation();
@@ -394,6 +404,16 @@ public class StringManipulationTest {
     public void testMakeFancyString_withParameterizedTest(String input, String expected) {
         // given && when
         final var actual = serviceUnderTest.makeFancyString(input);
+
+        // then
+        then(actual).isEqualTo(expected);
+    }
+
+    @ParameterizedTest
+    @MethodSource("NumJewelsInStonesTestCase")
+    public void testNumJewelsInStones_withParameterizedTest(String jewels, String stones, int expected) {
+        // given && when
+        final var actual = serviceUnderTest.numJewelsInStones(jewels, stones);
 
         // then
         then(actual).isEqualTo(expected);
