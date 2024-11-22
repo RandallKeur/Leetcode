@@ -177,9 +177,9 @@ public class StringManipulationTest {
 
     public static Stream<Arguments> CountCharactersTestCases() {
         return Stream.of(
-                Arguments.of(new String[]{"cat","bt","hat","tree"}, "atach", 6),
-                Arguments.of(new String[] {"hello","world","leetcode"}, "welldonehoneyr", 10),
-                Arguments.of(new String[] {"hello","world","leetcode"}, "weldonehoneyr", 5)
+                Arguments.of(new String[]{"cat", "bt", "hat", "tree"}, "atach", 6),
+                Arguments.of(new String[]{"hello", "world", "leetcode"}, "welldonehoneyr", 10),
+                Arguments.of(new String[]{"hello", "world", "leetcode"}, "weldonehoneyr", 5)
         );
     }
 
