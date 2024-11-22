@@ -273,4 +273,26 @@ public class NumberOperator {
         dictionary.put('M', 1000);
         return dictionary;
     }
+
+    private Integer findLargestValueInArray(int[] array) {
+        var max = 0;
+        for (int number : array) {
+            if (number > max) {
+                max = number;
+            }
+        }
+        return max;
+    }
+
+    public List<Boolean> kidsWithCandies(int[] candies, Integer extraCandies) {
+        var max = findLargestValueInArray(candies);
+        var result = new ArrayList<Boolean>();
+        for (int candy : candies) {
+            if (candy + extraCandies >= max)
+                result.add(true);
+            else
+                result.add(false);
+        }
+        return result;
+    }
 }

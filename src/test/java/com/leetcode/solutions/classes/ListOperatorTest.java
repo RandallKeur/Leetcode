@@ -1,6 +1,5 @@
-package com.leetcode.solutions.problems;
+package com.leetcode.solutions.classes;
 
-import com.leetcode.solutions.classes.ListOperator;
 import com.leetcode.solutions.customStructures.ListNode;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
