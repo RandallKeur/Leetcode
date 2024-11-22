@@ -1,5 +1,6 @@
 package com.leetcode.solutions.problems;
 
+import com.leetcode.solutions.classes.ListOperator;
 import com.leetcode.solutions.customStructures.ListNode;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -10,9 +11,9 @@ import java.util.stream.Stream;
 
 import static org.assertj.core.api.BDDAssertions.then;
 
-public class Problem21Test {
+public class ListOperatorTest {
 
-    private Problem21 serviceUnderTest;
+    private ListOperator serviceUnderTest;
 
     private static Stream<Arguments> TestCases() {
         return Stream.of(
@@ -30,7 +31,7 @@ public class Problem21Test {
 
     @BeforeEach
     public void setup() {
-        this.serviceUnderTest = new Problem21();
+        this.serviceUnderTest = new ListOperator();
     }
 
     @ParameterizedTest

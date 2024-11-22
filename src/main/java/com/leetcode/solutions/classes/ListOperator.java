@@ -1,8 +1,8 @@
-package com.leetcode.solutions.problems;
+package com.leetcode.solutions.classes;
 
 import com.leetcode.solutions.customStructures.ListNode;
 
-public class Problem21 {
+public class ListOperator {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         var resultPointer = new ListNode();
         var result = resultPointer;
