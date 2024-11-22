@@ -143,6 +143,15 @@ public class NumberOperatorTest {
         );
     }
 
+    public static Stream<Arguments> KidsWithCandiesTestCases() {
+        return Stream.of(
+                Arguments.of(new int[] {2,3,5,1,3}, 3, List.of(true, true, true, false, true)),
+                Arguments.of(new int[] {4,2,1,1,2}, 1, List.of(true, false, false, false, false)),
+                Arguments.of(new int[] {12,1,12}, 10, List.of(true, false, true)),
+                Arguments.of(new int[] {12,1,11,13,14,45,93,100}, 49, List.of(false,false,false,false,false,false,true,true))
+        );
+    }
+
     @BeforeEach
     public void setup() {
         this.serviceUnderTest = new NumberOperator();
@@ -271,9 +280,19 @@ public class NumberOperatorTest {
 
     @ParameterizedTest
     @MethodSource("RomanToIntTestCases")
-    public void testSolution_withParameterizedInputs(String input, Integer expected) {
+    public void testRomanToInt_withParameterizedInputs(String input, Integer expected) {
         // given & when
         final var actual = serviceUnderTest.romanToInt(input);
+
+        // then
+        then(actual).isEqualTo(expected);
+    }
+
+    @ParameterizedTest
+    @MethodSource("KidsWithCandiesTestCases")
+    public void testKidsWithCandies_withParameterizedInputs(int[] candies, Integer extraCandies, List<Boolean> expected) {
+        // given & when
+        final var actual = serviceUnderTest.kidsWithCandies(candies, extraCandies);
 
         // then
         then(actual).isEqualTo(expected);
