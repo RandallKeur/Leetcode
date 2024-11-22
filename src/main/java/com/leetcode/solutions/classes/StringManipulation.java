@@ -364,7 +364,7 @@ public class StringManipulation {
 
     private Boolean canBuildString(String input, HashMap<Character, Integer> dictionary) {
         for (var c : input.toCharArray()) {
-            if (dictionary.getOrDefault(c,0) == 0) {
+            if (dictionary.getOrDefault(c, 0) == 0) {
                 return false;
             }
             dictionary.put(c, dictionary.get(c) - 1);
@@ -374,9 +374,9 @@ public class StringManipulation {
 
 
     private HashMap<Character, Integer> buildDictionary(String chars) {
-        final var dictionary =  new HashMap<Character, Integer>();
+        final var dictionary = new HashMap<Character, Integer>();
         for (var c : chars.toCharArray()) {
-            dictionary.put(c,dictionary.getOrDefault(c,0) + 1);
+            dictionary.put(c, dictionary.getOrDefault(c, 0) + 1);
         }
         return dictionary;
     }
